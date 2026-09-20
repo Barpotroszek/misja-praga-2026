@@ -1,0 +1,57 @@
+/*
+  MISJA PRAGA — paleta "tajnych akt"
+  Zmieniaj kolory TYLKO tutaj — cała aplikacja korzysta z tych zmiennych.
+
+  Proporcje w UI (orientacyjnie):
+    60%  --paper           papier / jasna przestrzeń
+    20%  --sky              błękit / otoczenie
+    15%  --navy             granat agencji
+     5%  --red              czerwone akcenty
+*/
+
+:root {
+  /* --- Granat agencji (kolor wiodący) --- */
+  --navy: #173044;
+  /* główny ciemny kolor marki, nagłówki, paski */
+  --navy-shadow: #0F2131;
+  /* bardzo ciemny tekst, cienie, kontury */
+
+  /* --- Papier / akta --- */
+  --paper: #fffcf7;
+  /* bazowy kolor kartki / logo na granacie */
+  --paper-soft: #F6EFE3;
+  /* delikatny wariant papieru — panele */
+  --paper-old: #F4D9B0;
+  /* ciepły krem — stare dokumenty, mapy */
+  --paper-sepia: #C4AB95;
+  /* brąz papieru / sepia — ilustracje, cień */
+
+  /* --- Okładka teczki --- */
+  --folder-cover: #D9B88A;
+
+  /* --- Akcenty --- */
+  --sky: #9DCBE5;
+  /* błękit / otoczenie */
+  --red: #C62828;
+  /* pieczęć "TAJNE", błędy, akcenty */
+  --red-dark: #8f1c1c;
+
+  /* --- Linie / szkice --- */
+  --sketch-line: #8C7662;
+
+  /* --- Tekst --- */
+  --text-main: #173044;
+  /* tekst na aktach */
+  --text-muted: #5b6b78;
+
+  /* --- Stan / feedback --- */
+  --success: #2e7d4f;
+  --success-bg: #e3efe6;
+
+  /* --- Promienie, cienie, odstępy współdzielone --- */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --shadow-doc: 0 6px 18px rgba(23, 48, 68, 0.18);
+  --shadow-doc-soft: 0 2px 8px rgba(23, 48, 68, 0.12);
+}
