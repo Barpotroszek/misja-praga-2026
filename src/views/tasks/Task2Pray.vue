@@ -1,20 +1,5 @@
 <template>
   <div class="document-card">
-    <p class="muted">Zróbcie wspólną fotkę całą rodziną w tym miejscu.</p>
-
-    <label class="btn btn-secondary btn-block" style="text-align: center; cursor: pointer">
-      {{ photoPreview ? 'Zrób zdjęcie ponownie' : 'Zrób zdjęcie' }}
-      <input
-        type="file"
-        accept="image/*"
-        capture="environment"
-        style="display: none"
-        @change="onFile"
-      />
-    </label>
-
-    <img v-if="photoPreview" :src="photoPreview" alt="Podgląd zdjęcia" class="photo-preview" />
-
     <button class="btn btn-primary btn-block" :disabled="!photoPreview" @click="$emit('completed')">
       Zatwierdź i idź dalej
     </button>

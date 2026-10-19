@@ -20,7 +20,7 @@ export async function fetchAgentData(identifier) {
   // sztuczne opóźnienie, żeby ekran "deszyfrowania" miał sens wizualnie
   await new Promise((r) => setTimeout(r, 700))
 
-  const res = await fetch(`${BASE_URL}/agents/${encodeURIComponent(identifier)}.json`)
+  const res = await fetch(`./${BASE_URL}/agents/${encodeURIComponent(identifier)}.json`)
   if (!res.ok) {
     throw new Error('NIEZNANY_IDENTYFIKATOR')
   }

@@ -6,7 +6,9 @@
       <div class="stamp" style="float: right; margin-left: 10px">ODTAJNIONE</div>
       <p class="document-card__eyebrow">ZADANIE ODBLOKOWANE</p>
       <h1 style="font-size: 1.3rem">{{ task.title }}</h1>
-      <p>{{ task.briefing }}</p>
+      <div v-for="x in task.briefing">
+        <p>{{ x }}</p>
+      </div>
     </div>
 
     <div style="margin-top: 20px">
@@ -31,7 +33,7 @@ const task = computed(() => currentTask.value)
 // Mapowanie "nazwa komponentu z taskDefinitions.js" -> plik w views/tasks/
 const taskComponents = {
   Task1Time: defineAsyncComponent(() => import('./tasks/Task1Time.vue')),
-  Task2Photo: defineAsyncComponent(() => import('./tasks/Task2Photo.vue')),
+  Task2Pray: defineAsyncComponent(() => import('./tasks/Task2Pray.vue')),
   Task3Flag: defineAsyncComponent(() => import('./tasks/Task3Flag.vue')),
   Task4Song: defineAsyncComponent(() => import('./tasks/Task4Song.vue')),
   Task5Poem: defineAsyncComponent(() => import('./tasks/Task5Poem.vue')),

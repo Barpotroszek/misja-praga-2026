@@ -7,7 +7,7 @@ import { getActiveTasks, getTaskById } from '../data/tasks/taskDefinitions'
  *
  * STORAGE_KEY -> jeden obiekt JSON, żeby uprościć odczyt/zapis.
  */
-const STORAGE_KEY = 'misja-praga:state'
+const STORAGE_KEY = 'misja-praga:state:1.0'
 
 function loadInitialState() {
   try {
@@ -34,7 +34,7 @@ watch(
   (val) => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(val))
   },
-  { deep: true }
+  { deep: true },
 )
 
 export function useGameState() {
@@ -48,7 +48,7 @@ export function useGameState() {
 
   const currentTaskId = computed(() => taskOrder.value[state.currentIndex] ?? null)
   const currentTask = computed(() =>
-    currentTaskId.value ? getTaskById(currentTaskId.value) : null
+    currentTaskId.value ? getTaskById(currentTaskId.value) : null,
   )
   const totalTasks = computed(() => taskOrder.value.length)
   const isLastTask = computed(() => state.currentIndex >= totalTasks.value - 1)

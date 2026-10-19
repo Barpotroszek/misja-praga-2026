@@ -17,7 +17,7 @@ export default defineConfig({
         theme_color: '#173044',
         background_color: '#F8F1E4',
         display: 'standalone',
-        start_url: '/',
+        start_url: '/misja-praga-2026',
         icons: [
           // { src: '/icons/icon.png', sizes: '192x192', type: 'image/png' },
           { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
@@ -30,4 +30,5 @@ export default defineConfig({
       },
     }),
   ],
+  base: '/misja-praga-2026/',
 })
