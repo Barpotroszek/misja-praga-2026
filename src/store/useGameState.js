@@ -17,7 +17,7 @@ function loadInitialState() {
     console.warn('Nie udało się odczytać zapisanego stanu gry:', e)
   }
   return {
-    auth: null, // { identifier, familyName, codename, taskOrder }
+    auth: null, // { identifier, familyName, agentName, taskOrder }
     rulesAccepted: false,
     currentIndex: 0, // indeks w taskOrder — które zadanie jest "aktywne"
     phase: 'direction', // 'direction' (info dokąd iść) | 'task' (treść zadania odblokowana po QR)
@@ -57,7 +57,7 @@ export function useGameState() {
     state.auth = {
       identifier: agentData.identifier,
       familyName: agentData.familyName,
-      codename: agentData.codename,
+      agentName: agentData.agentName,
       taskOrder: agentData.taskOrder,
     }
   }
@@ -82,7 +82,7 @@ export function useGameState() {
 
     if (!state.completedTaskIds.includes(task.id)) {
       state.completedTaskIds.push(task.id)
-      state.unlockedWords.push({ taskId: task.id, word: task.unlockWord })
+      state.unlockedWords.push({ taskId: task.id, word: task.unlockedWord })
     }
 
     if (isLastTask.value) {

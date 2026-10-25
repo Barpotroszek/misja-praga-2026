@@ -1,6 +1,6 @@
 <template>
   <div class="screen">
-    <!-- <AgencyHeader :codename="state.auth?.codename" /> -->
+    <!-- <AgencyHeader :agentName="state.auth?.agentName" /> -->
 
     <div class="document-card" style="margin-top: 20px">
       <p class="document-card__eyebrow">BRIEFING OPERACYJNY</p>
@@ -9,8 +9,8 @@
       <!-- TODO: podmień na docelowy opis zasad gry -->
       <p>
         Czeka na was pięć punktów rozrzuconych po Pradze. W każdym z nich znajdziecie kod QR —
-        dopiero po jego zeskanowaniu na miejscu poznacie treść zadania. Zadania trzeba wykonywać
-        po kolei; aplikacja zawsze pokaże wam, dokąd iść dalej.
+        dopiero po jego zeskanowaniu na miejscu poznacie treść zadania. Zadania trzeba wykonywać po
+        kolei; aplikacja zawsze pokaże wam, dokąd iść dalej.
       </p>
       <p>
         Za każde ukończone zadanie dostaniecie hasło. Zapiszcie je w notatniku — przyda się na

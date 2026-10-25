@@ -1,7 +1,7 @@
 {
   "identifier": "AG-7F3K2",
   "familyName": "Rodzina Kowalskich",
-  "codename": "Zespół Wrona",
+  "agentName": "Zespół Wrona",
   "taskOrder": [
     "task-1-godzina",
     "task-2-krzyz",

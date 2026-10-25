@@ -12,14 +12,14 @@
  *  - direction:     tekst kierunku — dokąd uczestnicy mają się udać PRZED zeskanowaniem QR
  *  - qrHint:        krótka podpowiedź co skanują na miejscu (opcjonalne, do UI skanera)
  *  - briefing:      treść polecenia pokazywana po odblokowaniu (ekran zadania)
- *  - unlockWord:    hasło odblokowywane po ukończeniu zadania (trafia do krzyżówki)
+ *  - unlockedWord:    hasło odblokowywane po ukończeniu zadania (trafia do krzyżówki)
  *  - completionNote: tekst na ekranie "Brawo agenci..." po ukończeniu tego zadania
  */
 
 export const tasks = [
   {
     // id: 'task-1-godzina',
-    id: 'task-1',
+    id: 'podroznik-rejonu',
     title: 'Pociąg „Kościuszko”',
     component: 'Task1Time',
     direction:
@@ -34,17 +34,17 @@ export const tasks = [
       ],
     // poprawna odpowiedź do walidacji w Task1Time.vue — patrz sekcja "correctTime" niżej
     correctTime: '18:00',
-    unlockWord: 'SKORUPKA',
+    unlockedWord: 'SKORUPKA',
     completionNote:
       'Co do minuty, agenci. Pociąg „Kościuszko” dojedzie na czas dzięki wam. Zapiszcie słowo-klucz i ruszajcie dalej.',
   },
   {
     // id: 'task-2-krzyz',
-    id: 'task-2',
+    id: 'pamiec-w-nas',
     title: 'Krzyż Poległych',
     component: 'Task2Pray',
     direction:
-      'Nie każda misja polega na pośpiechu. Udajcie się do miejsca upamiętniającego tych, którzy polegli w walce o wolność: Krzyż Poległych, koło Cerkwii św. Magdaleny. Kod QR znajdziecie w pobliżu krzyża.',
+      'Nie każda misja polega na pośpiechu. Udajcie się do miejsca upamiętniającego tych, którzy polegli w walce o wolność: Krzyż Poległych, koło Cerkwii św. Magdaleny. Kod QR znajdziecie w pobliżu krzyża od ul. Jagiellońskiej.',
     qrHint: 'Kod QR przy krzyżu',
     briefing: [
       'To zadanie wymaga ciszy i skupienia. ',
@@ -63,25 +63,25 @@ export const tasks = [
         Niech odpoczywają w pokoju. \
         Amen.',
     ],
-    unlockWord: 'PATRIOTYZM',
+    unlockedWord: 'PATRIOTYZM',
     completionNote: 'Chwila zadumy za wami. Ruszajcie dalej — kolejny punkt czeka...',
   },
   {
     // id: 'task-3-flaga',
-    id: 'task-3',
-    title: 'Namaluj flagę',
+    id: 'czlowiek-artysta',
+    title: 'Zróbcie kotylion',
     component: 'Task3Flag',
     direction: 'Skierujcie się do wskazanej sali. Na miejscu czeka na was prowadzący zadanie.',
     qrHint: 'Kod pokazywany przez prowadzącego po ukończeniu malowania',
     briefing: [
       'W tej sali czeka na was zadanie plastyczne — namalujcie flagę zgodnie z poleceniem prowadzącego. Gdy skończycie, poproście o kod QR potwierdzający wykonanie.',
     ],
-    unlockWord: 'FLAGA',
-    completionNote: 'Flaga gotowa! Czas na kolejne wyzwanie — kierujcie się do...',
+    unlockedWord: 'FLAGA',
+    completionNote: 'Kotyliony gotowe! Czas na kolejne wyzwanie — kierujcie się do...',
   },
   {
     // id: 'task-4-piosenka',
-    id: 'task-4',
+    id: 'rozspiewane-lawki',
     title: 'Zaśpiewaj piosenkę',
     component: 'Task4Song',
     direction:
@@ -91,14 +91,15 @@ export const tasks = [
       'Odsłuchajcie fragment piosenki poniżej, a następnie nagrajcie, jak śpiewacie go wspólnie.',
     ],
     // audioSrc / lyricsUrl uzupełnisz, gdy będziecie mieli finalny materiał
-    audioSrc: '',
-    lyricsUrl: '',
-    unlockWord: 'NIEPODLEGŁOŚĆ',
-    completionNote: 'Ale głosy! Dobra robota, agenci. Ostatnia prosta — udajcie się do...',
+    audioSrc: 'https://youtu.be/QGPSMNzA2Xc?si=YFg1ixgaAIJa2HWM&t=9',
+    // lyricsUrl: '',
+    unlockedWord: 'NIEPODLEGŁOŚĆ',
+    completionNote:
+      'Ale głosy! Dobra robota, agenci. Następny punkt na liście odhaczony — udajcie się teraz do...',
   },
   {
     // id: 'task-5-wierszyk',
-    id: 'task-5',
+    id: 'wytwor-polon isty',
     title: 'Popraw co nie pasuje',
     component: 'Task5Poem',
     direction: [
@@ -152,7 +153,7 @@ export const tasks = [
         { id: 'b11', options: ['wolnosć', 'wolność', 'wólność'], correct: 'wolność' },
       ],
     },
-    unlockWord: 'ROZBOIRY',
+    unlockedWord: 'ROZBOIRY',
     completionNote: 'Wierszyk poprawiony! Gratulacje, przejdź do kolejnego punktu.',
   },
   {
@@ -163,7 +164,7 @@ export const tasks = [
     direction: 'Treść tego punktu jeszcze w opracowaniu — miejsce zarezerwowane w trasie.',
     qrHint: 'TBD',
     briefing: ['Treść tego zadania zostanie uzupełniona później.'],
-    unlockWord: 'PIŁSUDSKI',
+    unlockedWord: 'PIŁSUDSKI',
     completionNote: 'Świetnie! Ruszajcie dalej...',
     disabled: true, // ustaw na false, gdy zadanie będzie gotowe — wtedy pojawi się w trasie
   },

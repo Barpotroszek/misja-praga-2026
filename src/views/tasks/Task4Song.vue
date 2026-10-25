@@ -1,36 +1,35 @@
 <template>
   <div class="document-card">
     <p class="document-card__eyebrow">FRAGMENT DO ZAŚPIEWANIA</p>
+    <iframe
+      width="400"
+      height="315"
+      src="https://www.youtube.com/embed/ltTZvDlcltY?si=CmqxtKuAkHZsJ44m"
+      title="YouTube video player"
+      frameborder="0"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+      "
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
 
-    <audio v-if="task.audioSrc" :src="task.audioSrc" controls style="width: 100%" />
-    <p v-else class="muted">TODO: podłączyć plik audio (src="task.audioSrc").</p>
-
-    <p v-if="task.lyricsUrl">
-      <a :href="task.lyricsUrl" target="_blank" rel="noopener">Zobacz tekst piosenki</a>
+    <p>Tekst do piosenki macie na odwrocie identyfikatora.</p>
+    <p>
+      Utworzone nagranie wyślijcie nam na grupę na WhatsAppie. Pamiętajcie, że wywiad to potem
+      zweryfikuje!
     </p>
-    <p v-else class="muted">TODO: dodać link do tekstu piosenki.</p>
-
     <hr style="border: none; border-top: 1px dashed var(--paper-sepia); margin: 18px 0" />
 
-    <div v-if="!videoBlobUrl">
-      <button v-if="!recording" class="btn btn-primary btn-block" @click="startRecording">
-        Nagraj wideo
-      </button>
-      <button v-else class="btn btn-danger-outline btn-block" @click="stopRecording">
-        Zatrzymaj nagrywanie
-      </button>
-      <video v-if="recording" ref="liveVideo" autoplay muted playsinline class="video-preview" />
-    </div>
-
-    <div v-else>
-      <video :src="videoBlobUrl" controls playsinline class="video-preview" />
-      <div class="stack" style="margin-top: 10px">
-        <button class="btn btn-secondary btn-block" @click="resetRecording">Nagraj jeszcze raz</button>
-        <button class="btn btn-primary btn-block" :disabled="uploading" @click="submitRecording">
-          {{ uploading ? 'Wysyłanie…' : 'Wyślij nagranie' }}
-        </button>
-      </div>
-    </div>
+    <button class="btn btn-primary btn-block" @click="videoSentCallback">
+      Nagranie zostało wysłane
+    </button>
   </div>
 </template>
 
@@ -43,14 +42,16 @@ const props = defineProps({ task: Object })
 const emit = defineEmits(['completed'])
 const { state } = useGameState()
 
-const recording = ref(false)
-const uploading = ref(false)
-const liveVideo = ref(null)
+const { videoSent } = ref(false)
 const videoBlobUrl = ref('')
 
 let mediaRecorder = null
 let mediaStream = null
 let chunks = []
+
+async function videoSentCallback() {
+  emit('completed')
+}
 
 async function startRecording() {
   chunks = []

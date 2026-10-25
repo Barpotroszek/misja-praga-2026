@@ -4,7 +4,7 @@
       <h1 style="font-size: 1.4rem">{{ task.title }} — zaliczone!</h1>
       <p class="document-card__eyebrow">ODBLOKOWANE HASŁO:</p>
 
-      <div class="pill" style="font-size: 1rem; margin-bottom: 14px">{{ task.unlockWord }}</div>
+      <div class="pill" style="font-size: 1rem; margin-bottom: 14px">{{ task.unlockedWord }}</div>
       <p class="muted">Zapiszcie to hasło w notatniku — przyda się do finałowej krzyżówki.</p>
 
       <p style="margin-top: 18px">{{ task.completionNote }}</p>

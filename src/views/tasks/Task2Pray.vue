@@ -1,6 +1,6 @@
 <template>
   <div class="document-card">
-    <button class="btn btn-primary btn-block" :disabled="!photoPreview" @click="$emit('completed')">
+    <button class="btn btn-primary btn-block" @click="$emit('completed')">
       Zatwierdź i idź dalej
     </button>
   </div>

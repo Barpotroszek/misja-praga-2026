@@ -1,8 +1,8 @@
 <template>
   <div class="document-card">
     <p class="muted">
-      Namalujcie flagę zgodnie z poleceniem prowadzącego. Gdy skończycie, poproście go o
-      pokazanie kodu potwierdzającego i zeskanujcie go poniżej.
+      Namalujcie flagę zgodnie z poleceniem prowadzącego. Gdy skończycie, poproście go o pokazanie
+      kodu potwierdzającego i zeskanujcie go poniżej.
     </p>
 
     <p v-if="wrong" class="error-banner">To nie ten kod — poproście prowadzącego o właściwy.</p>
@@ -25,10 +25,8 @@ const emit = defineEmits(['completed'])
 const showScanner = ref(false)
 const wrong = ref(false)
 
-// Konwencja: kod potwierdzający dla tego zadania to "{id-zadania}-potwierdzenie".
-// Prowadzący dostaje wydrukowany taki kod QR do pokazania po ukończeniu malowania.
 function onScan(code) {
-  if (code === `${props.task.id}-potwierdzenie`) {
+  if (code.toLowerCase() === `murzyn-na-jawie`) {
     wrong.value = false
     emit('completed')
   } else {

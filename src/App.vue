@@ -11,7 +11,7 @@ const progressLabel = computed(() => `Zadanie ${state.currentIndex + 1} / ${tota
 <template>
   <div class="app-shell">
     <router-view v-slot="{ Component, route }">
-      <AgencyHeader :codename="state.auth?.codename" :progress-label="progressLabel" />
+      <AgencyHeader :agentName="state.auth?.agentName" :progress-label="progressLabel" />
       <transition name="page-turn" mode="out-in">
         <component :is="Component" :key="route.fullPath" />
       </transition>

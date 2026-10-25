@@ -5,11 +5,11 @@
  * podmienić BASE_URL i te dwie funkcje na prawdziwe zapytania (fetch/axios).
  *
  * Docelowa struktura na serwerze (do ustalenia z backendem):
- *   GET /agents/{identifier}  -> { identifier, familyName, codename, taskOrder }
+ *   GET /agents/{identifier}  -> { identifier, familyName, agentName, taskOrder }
  *   POST /uploads/recording   -> upload nagrania wideo z zadania nr 4
  */
 
-const BASE_URL = '/mock-server'
+// const BASE_URL = '/mock'
 
 /**
  * Symuluje "deszyfrowanie tajnych akt" — pobranie danych grupy po
@@ -20,7 +20,7 @@ export async function fetchAgentData(identifier) {
   // sztuczne opóźnienie, żeby ekran "deszyfrowania" miał sens wizualnie
   await new Promise((r) => setTimeout(r, 700))
 
-  const res = await fetch(`./${BASE_URL}/agents/${encodeURIComponent(identifier)}.json`)
+  const res = await fetch(`./agents/${encodeURIComponent(identifier)}.json`)
   if (!res.ok) {
     throw new Error('NIEZNANY_IDENTYFIKATOR')
   }

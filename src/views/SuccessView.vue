@@ -4,7 +4,7 @@
       <div class="stamp" style="margin-bottom: 14px">MISJA ZAKOŃCZONA</div>
       <h1 style="font-size: 1.5rem">Niepodległość odzyskana!</h1>
       <p>
-        Gratulacje, {{ state.auth?.familyName }} ({{ state.auth?.codename }}). Dzięki waszej
+        Gratulacje, {{ state.auth?.familyName }} ({{ state.auth?.agentName }}). Dzięki waszej
         odwadze i sprytowi misja zakończyła się sukcesem.
       </p>
       <p class="muted">Dziękujemy za grę i do zobaczenia na kolejnej misji, agenci.</p>

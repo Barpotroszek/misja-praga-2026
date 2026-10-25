@@ -1,6 +1,6 @@
 <template>
   <div class="screen" v-if="task">
-    <!-- <AgencyHeader :codename="state.auth?.codename" /> -->
+    <!-- <AgencyHeader :agentName="state.auth?.agentName" /> -->
 
     <div class="document-card" style="margin-top: 20px">
       <div class="stamp" style="float: right; margin-left: 10px">ODTAJNIONE</div>

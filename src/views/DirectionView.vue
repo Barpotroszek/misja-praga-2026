@@ -1,6 +1,6 @@
 <template>
   <div class="screen" v-if="task">
-    <!-- <AgencyHeader :codename="state.auth?.codename" :progress-label="progressLabel" /> -->
+    <!-- <AgencyHeader :agentName="state.auth?.agentName" :progress-label="progressLabel" /> -->
 
     <div class="document-card document-card--old" style="margin-top: 20px">
       <p class="document-card__eyebrow">KIERUNEK MARSZU</p>
@@ -64,5 +64,4 @@ async function validateScan(code) {
     }
   }
 }
-
 </script>

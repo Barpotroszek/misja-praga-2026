@@ -19,12 +19,12 @@
     <div class="document-card" style="margin-top: 16px">
       <p class="document-card__eyebrow">SZYFR KOŃCOWY</p>
       <p class="muted">
-        Gdy ułożycie krzyżówkę, wpiszcie tutaj hasło, które z niej wyszło i zgłoście je
-        prowadzącemu w wyznaczonym miejscu.
+        Gdy ułożycie krzyżówkę, wpiszcie tutaj hasło, które z niej wyszło i zgłoście je prowadzącemu
+        w wyznaczonym miejscu.
       </p>
       <div class="field">
         <label for="final-code">Odczytany szyfr</label>
-        <input id="final-code" v-model="finalCode" type="text" placeholder="np. NIEPODLEGLOSC" />
+        <input id="final-code" v-model="finalCode" type="text" />
       </div>
     </div>
 
